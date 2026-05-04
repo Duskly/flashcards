@@ -1,91 +1,137 @@
-// script.js
+// Stato dell'applicazione
+let currentCategoryIndex = 0;
+let currentIndex = 0;
+let touchstartX = 0;
+let touchendX = 0;
 
-// Ottieni i riferimenti agli elementi HTML
-const categoriesTabs = document.getElementById('categories-tabs');
+// Riferimenti agli elementi DOM
 const cardElement = document.getElementById('flashcard');
 const questionText = document.getElementById('question');
 const answerText = document.getElementById('answer');
-const cardNumberText = document.getElementById('card-number');
+const cardNumber = document.getElementById('card-number');
+const categoriesTabs = document.getElementById('categories-tabs');
 
-// Stato dell'applicazione
-let currentCategory = ""; // Categoria attiva
-let currentCardsArray = []; // Array di card della categoria attiva
-let currentIndex = 0; // Indice della card attuale all'interno dell'array
+// Trasformiamo le chiavi dell'oggetto data.js in un array
+const categoryKeys = Object.keys(flashcardsCategories);
 
-// 1. Funzione per creare dinamicamente i pulsanti delle categorie
-function initCategories() {
-    categoriesTabs.innerHTML = ""; // Pulisci eventuali pulsanti vecchi
-    
-    // Ottieni tutte le chiavi (nomi delle categorie) da data.js
-    const categoryNames = Object.keys(flashcardsCategories);
-    
-    // Crea un pulsante per ogni categoria
-    categoryNames.forEach((name, index) => {
-        const tab = document.createElement('div');
-        tab.classList.add('category-tab');
-        tab.innerText = name;
-        tab.onclick = () => selectCategory(name);
-        categoriesTabs.appendChild(tab);
-        
-        // Seleziona la prima categoria all'avvio
-        if (index === 0) {
-            selectCategory(name);
-        }
+/**
+ * Inizializza l'interfaccia creando i bottoni delle categorie
+ */
+function init() {
+    categoriesTabs.innerHTML = "";
+    categoryKeys.forEach((name, i) => {
+        const btn = document.createElement('div');
+        btn.className = 'category-tab';
+        btn.innerText = name;
+        btn.id = `tab-${i}`;
+        btn.onclick = () => {
+            currentCategoryIndex = i;
+            currentIndex = 0;
+            renderCard();
+        };
+        categoriesTabs.appendChild(btn);
     });
+    renderCard();
 }
 
-// 2. Funzione per cambiare categoria
-function selectCategory(categoryName) {
-    currentCategory = categoryName;
-    currentCardsArray = flashcardsCategories[categoryName];
-    currentIndex = 0; // Ricomincia dalla prima card
+/**
+ * Aggiorna il contenuto visivo della card
+ */
+function renderCard() {
+    const categoryName = categoryKeys[currentCategoryIndex];
+    const currentCards = flashcardsCategories[categoryName];
     
-    // Evidenzia visivamente il pulsante attivo
-    const allTabs = document.querySelectorAll('.category-tab');
-    allTabs.forEach(tab => tab.classList.remove('active'));
-    allTabs.forEach(tab => {
-        if(tab.innerText === categoryName) {
-            tab.classList.add('active');
-        }
-    });
-    
-    updateCardContent(); // Aggiorna la card subito
-}
-
-// 3. Funzione per aggiornare il contenuto e il numero della card attuale
-function updateCardContent() {
-    const currentData = currentCardsArray[currentIndex];
-    
-    // Fronte
-    questionText.innerText = currentData.q;
-    
-    // Retro (mantiene i ritorni a capo grazie a `white-space: pre-line` nel CSS)
-    answerText.innerText = currentData.a;
-    
-    // Numero d'ordine in basso a destra
-    cardNumberText.innerText = currentIndex + 1;
-}
-
-// 4. Logica delle interazioni
-function flipCard() {
-    cardElement.classList.toggle('is-flipped');
-}
-
-function nextCard() {
-    cardElement.classList.remove('is-flipped'); // Torna sul fronte
-    setTimeout(() => {
-        currentIndex = (currentIndex + 1) % currentCardsArray.length;
-        updateCardContent();
-    }, 200); // Aspetta che la carta sia a metà rotazione
-}
-
-function prevCard() {
+    // Chiude la card (torna al fronte) prima di cambiare testo
     cardElement.classList.remove('is-flipped');
+    
+    // Piccolo effetto di dissolvenza per il cambio contenuto
+    cardElement.style.opacity = "0";
+    
     setTimeout(() => {
-        currentIndex = (currentIndex - 1 + currentCardsArray.length) % currentCardsArray.length;
-        updateCardContent();
-    }, 200);
+        questionText.innerText = currentCards[currentIndex].q;
+        answerText.innerText = currentCards[currentIndex].a;
+        cardNumber.innerText = currentIndex + 1;
+        
+        // Aggiorna lo stato visivo dei tab in alto
+        document.querySelectorAll('.category-tab').forEach((t, i) => {
+            t.classList.toggle('active', i === currentCategoryIndex);
+        });
+
+        // Fa scorrere il menu delle categorie se il tab attivo esce dallo schermo
+        const activeTab = document.getElementById(`tab-${currentCategoryIndex}`);
+        if (activeTab) {
+            activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+        
+        cardElement.style.opacity = "1";
+    }, 150);
 }
 
-// 5. Avvio
-window.onload = initCategories;
+/**
+ * Gestisce la navigazione tra card e categorie (Logica a scatto)
+ */
+function navigate(direction) {
+    const currentCards = flashcardsCategories[categoryKeys[currentCategoryIndex]];
+
+    if (direction === 'next') {
+        if (currentIndex < currentCards.length - 1) {
+            currentIndex++;
+        } else if (currentCategoryIndex < categoryKeys.length - 1) {
+            // Passa alla prima card della categoria successiva
+            currentCategoryIndex++;
+            currentIndex = 0;
+        } else {
+            // Loop: torna alla primissima card assoluta
+            currentCategoryIndex = 0;
+            currentIndex = 0;
+        }
+    } else { // direction === 'prev'
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else if (currentCategoryIndex > 0) {
+            // Passa all'ultima card della categoria precedente
+            currentCategoryIndex--;
+            currentIndex = flashcardsCategories[categoryKeys[currentCategoryIndex]].length - 1;
+        } else {
+            // Loop: va all'ultima card dell'ultima categoria
+            currentCategoryIndex = categoryKeys.length - 1;
+            currentIndex = flashcardsCategories[categoryKeys[currentCategoryIndex]].length - 1;
+        }
+    }
+    renderCard();
+}
+
+// Funzioni collegate ai bottoni HTML
+function nextCard() { navigate('next'); }
+function prevCard() { navigate('prev'); }
+function flipCard() { cardElement.classList.toggle('is-flipped'); }
+
+/**
+ * Gestione Gesti Touch (Swipe)
+ */
+cardElement.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+}, {passive: true});
+
+cardElement.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, {passive: true});
+
+function handleSwipe() {
+    const swipeThreshold = 60; // Pixel necessari per attivare lo swipe
+    
+    // Se la card è girata (mostra la risposta), lo swipe non deve avvenire 
+    // o deve prima rigirare la card? Di solito è meglio navigare solo dal fronte.
+    // Se preferisci navigare sempre, rimuovi il controllo is-flipped.
+    
+    if (touchendX < touchstartX - swipeThreshold) {
+        nextCard(); // Swipe verso sinistra
+    }
+    if (touchendX > touchstartX + swipeThreshold) {
+        prevCard(); // Swipe verso destra
+    }
+}
+
+// Avvio
+window.onload = init;
