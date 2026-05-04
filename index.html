@@ -2,36 +2,32 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Mie Flashcards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Flashcards</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
         <h1>Flashcards</h1>
-
-        <div class="categories-container" id="categories-tabs">
-            </div>
+        <div class="categories-container" id="categories-tabs"></div>
         
         <div class="flashcard" id="flashcard" onclick="flipCard()">
             <div class="flashcard-inner">
                 <div class="front">
-                    <p id="question">Caricamento...</p>
-                    <span id="card-number" class="card-number">1</span>
+                    <p id="question"></p>
+                    <span id="card-number" class="card-number"></span>
                 </div>
                 <div class="back">
-                    <div id="answer">Caricamento...</div>
+                    <div id="answer"></div>
                 </div>
             </div>
         </div>
 
         <div class="controls">
-            <button onclick="prevCard()" class="btn-secondary">&laquo; Indietro</button>
-            <button onclick="nextCard()" class="btn-primary">Prossima &raquo;</button>
+            <button onclick="prevCard()">« Indietro</button>
+            <button onclick="nextCard()">Prossima »</button>
         </div>
     </div>
-
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
