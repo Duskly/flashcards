@@ -8,7 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Impedisce il rimbalzo della pagina su iOS */
+    overflow: hidden; /* Blocca lo scroll della pagina per non interferire con lo swipe */
 }
 
 .container {
@@ -24,12 +24,12 @@ body {
 
 /* TITOLO */
 h1 { 
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Rimpicciolito come richiesto */
     margin: 10px 0;
     font-weight: 700;
 }
 
-/* CATEGORIE SCROLLABILI ORIZZONTALMENTE */
+/* CATEGORIE SCROLLABILI */
 .categories-container {
     display: flex;
     flex-wrap: nowrap;
@@ -37,39 +37,37 @@ h1 {
     gap: 10px;
     padding: 10px 5px;
     margin-bottom: 15px;
-    -webkit-overflow-scrolling: touch; /* Scroll fluido su iPhone */
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Nasconde la scrollbar esteticamente ma mantiene la funzione */
 .categories-container::-webkit-scrollbar {
-    display: none;
+    display: none; /* Nasconde la scrollbar su iPhone */
 }
 
 .category-tab {
     flex: 0 0 auto;
-    padding: 8px 20px;
+    padding: 8px 18px;
     background: #ffffff;
     color: #333;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     cursor: pointer;
     border: none;
-    transition: all 0.3s ease;
-    scroll-margin: 20px; /* Importante per l'auto-centramento via JS */
+    transition: background 0.3s;
 }
 
 .category-tab.active {
-    background-color: #8B1A24; /* Rosso scuro come da immagine */
+    background-color: #8B1A24; /* Rosso scuro */
     color: white;
 }
 
 /* LA FLASHCARD */
 .flashcard {
-    width: 300px; /* Larghezza ottimale iPhone */
-    height: 60vh; /* Altezza dinamica basata sullo schermo */
+    width: 320px; /* Più grande, ottimizzata per iPhone */
+    height: 65vh; /* Più alta rispetto a prima */
     perspective: 1000px;
     margin: 0 auto 20px auto;
-    touch-action: none; /* Cruciale: permette il trascinamento senza scrollare la pagina */
+    touch-action: none; /* Fondamentale per catturare lo swipe senza muovere la pagina */
 }
 
 .flashcard-inner {
@@ -78,15 +76,14 @@ h1 {
     height: 100%;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
-    will-change: transform; /* Ottimizzazione GPU per iPhone */
+    will-change: transform;
 }
 
-/* Classe aggiunta via JS per far tornare la carta al centro dolcemente */
-.smooth-return {
-    transition: transform 0.3s ease-out !important;
+/* Rotazione per mostrare il retro */
+.flashcard.is-flipped .flashcard-inner {
+    transform: rotateY(180deg);
 }
 
-/* FACCE DELLA CARTA */
 .front, .back {
     position: absolute;
     width: 100%;
@@ -100,42 +97,41 @@ h1 {
     box-sizing: border-box;
     background: white;
     color: #1a2a3a;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 .front p {
     font-size: 1.8rem;
     font-weight: bold;
     margin: 0;
-    pointer-events: none; /* Evita interferenze col touch */
+    pointer-events: none; /* Assicura che il click passi alla card */
 }
 
-/* Numero in basso a destra richiesto */
 .card-number {
     position: absolute;
     bottom: 20px;
     right: 25px;
-    font-size: 1.2rem;
-    color: #aaa;
+    font-size: 1.1rem;
+    color: #bbb;
 }
 
-/* RETRO DELLA CARTA */
+/* RETRO */
 .back {
     transform: rotateY(180deg);
     text-align: left;
     align-items: flex-start;
-    overflow-y: auto; /* Permette di leggere testi lunghi scrollando dentro la card */
+    overflow-y: auto;
     border: 2px solid #8B1A24;
 }
 
 #answer {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     white-space: pre-line;
     color: #333;
 }
 
-/* BOTTONI NAVIGAZIONE (FOOTER) */
+/* CONTROLLI */
 .controls {
     display: flex;
     gap: 15px;
@@ -148,14 +144,8 @@ button {
     padding: 12px 25px;
     font-size: 1rem;
     border: none;
-    border-radius: 10px;
-    cursor: pointer;
+    border-radius: 12px;
     background: #333;
     color: white;
     min-width: 130px;
-    transition: background 0.2s;
-}
-
-button:active {
-    background: #555;
 }
