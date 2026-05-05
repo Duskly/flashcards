@@ -3,6 +3,7 @@ let currentIndex = 0;
 let startX = 0;
 let currentX = 0;
 let isDragging = false;
+let startTime = 0;
 
 const cardElement = document.getElementById('flashcard');
 const innerCard = cardElement.querySelector('.flashcard-inner');
@@ -19,7 +20,12 @@ function init() {
         btn.className = 'category-tab';
         btn.innerText = name;
         btn.id = `tab-${i}`;
-        btn.onclick = () => { currentCategoryIndex = i; currentIndex = 0; renderCard(); };
+        btn.onclick = (e) => { 
+            e.stopPropagation();
+            currentCategoryIndex = i; 
+            currentIndex = 0; 
+            renderCard(); 
+        };
         categoriesTabs.appendChild(btn);
     });
     renderCard();
@@ -27,17 +33,19 @@ function init() {
 
 function renderCard() {
     const currentCards = flashcardsCategories[categoryKeys[currentCategoryIndex]];
-    cardElement.classList.remove('is-flipped');
     
-    // Reset posizione e stile per la nuova card
+    // Reset totale della carta
+    cardElement.classList.remove('is-flipped');
+    innerCard.style.transition = "none"; 
     innerCard.style.transform = "translateX(0) rotateY(0)";
     innerCard.style.opacity = "1";
     
+    // Aggiorna testi
     questionText.innerText = currentCards[currentIndex].q;
     answerText.innerText = currentCards[currentIndex].a;
     cardNumber.innerText = currentIndex + 1;
 
-    // Aggiorna UI categorie
+    // UI Tabs
     document.querySelectorAll('.category-tab').forEach((t, i) => {
         t.classList.toggle('active', i === currentCategoryIndex);
     });
@@ -46,91 +54,86 @@ function renderCard() {
     if (activeTab) activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center' });
 }
 
-// --- GESTIONE TRASCINAMENTO ---
+// --- GESTIONE TOUCH OTTIMIZZATA ---
 
 cardElement.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
+    startTime = Date.now();
     isDragging = true;
-    innerCard.classList.remove('smooth-return');
+    currentX = 0;
+    innerCard.style.transition = "none"; // Rimuove transizioni durante il movimento del dito
 }, {passive: true});
 
 cardElement.addEventListener('touchmove', e => {
     if (!isDragging) return;
     currentX = e.touches[0].clientX - startX;
     
-    // Se la carta è girata, blocchiamo il trascinamento per evitare glitch grafici
-    if (cardElement.classList.contains('is-flipped')) return;
-
-    const rotation = currentX / 12; 
-    innerCard.style.transform = `translateX(${currentX}px) rotate(${rotation}deg)`;
+    // Se stiamo trascinando, non permettiamo la rotazione 3D per non incasinare il motore grafico
+    if (!cardElement.classList.contains('is-flipped')) {
+        const rotation = currentX / 15;
+        innerCard.style.transform = `translateX(${currentX}px) rotate(${rotation}deg)`;
+    }
 }, {passive: true});
 
-cardElement.addEventListener('touchend', () => {
+cardElement.addEventListener('touchend', e => {
     if (!isDragging) return;
     isDragging = false;
-    innerCard.classList.add('smooth-return');
+    
+    const duration = Date.now() - startTime;
+    const absX = Math.abs(currentX);
 
-    const threshold = 100; 
+    // LOGICA CLICK: Se il movimento è minimo e il tocco è breve, gira la carta
+    if (absX < 10 && duration < 250) {
+        flipCard();
+        return;
+    }
+
+    // LOGICA SWIPE: Se superiamo la soglia, cambia card
+    const threshold = 100;
+    innerCard.style.transition = "transform 0.3s ease-out, opacity 0.3s";
 
     if (currentX > threshold) {
-        animateOut("100%", () => navigate('prev'));
+        animateOut("100%");
     } else if (currentX < -threshold) {
-        animateOut("-100%", () => navigate('next'));
+        animateOut("-100%");
     } else {
-        innerCard.style.transform = "translateX(0) rotate(0)";
+        // Torna al centro se lo swipe è incompleto
+        innerCard.style.transform = cardElement.classList.contains('is-flipped') ? "rotateY(180deg)" : "translateX(0) rotate(0)";
     }
-    currentX = 0;
 });
 
-function animateOut(distance, callback) {
-    innerCard.style.transform = `translateX(${distance})`;
-    innerCard.style.opacity = "0";
-    setTimeout(callback, 250);
+function flipCard() {
+    cardElement.classList.toggle('is-flipped');
 }
 
-// --- LOGICA DI NAVIGAZIONE CON LOOP INFINITO ---
+function animateOut(direction) {
+    innerCard.style.transform = `translateX(${direction}) rotate(${direction === "100%" ? 20 : -20}deg)`;
+    innerCard.style.opacity = "0";
+    setTimeout(() => {
+        navigate(direction === "100%" ? 'prev' : 'next');
+    }, 300);
+}
+
 function navigate(direction) {
     const currentCards = flashcardsCategories[categoryKeys[currentCategoryIndex]];
-
     if (direction === 'next') {
-        if (currentIndex < currentCards.length - 1) {
-            // Avanti nella stessa categoria
-            currentIndex++;
-        } else if (currentCategoryIndex < categoryKeys.length - 1) {
-            // Passa alla categoria successiva
-            currentCategoryIndex++;
-            currentIndex = 0;
-        } else {
-            // LOOP: Torna alla prima categoria, prima card
-            currentCategoryIndex = 0;
+        if (currentIndex < currentCards.length - 1) currentIndex++;
+        else {
+            currentCategoryIndex = (currentCategoryIndex + 1) % categoryKeys.length;
             currentIndex = 0;
         }
-    } else { // direction === 'prev'
-        if (currentIndex > 0) {
-            // Indietro nella stessa categoria
-            currentIndex--;
-        } else if (currentCategoryIndex > 0) {
-            // Passa alla categoria precedente (ultima card)
-            currentCategoryIndex--;
-            currentIndex = flashcardsCategories[categoryKeys[currentCategoryIndex]].length - 1;
-        } else {
-            // LOOP: Vai all'ultima categoria, ultima card
-            currentCategoryIndex = categoryKeys.length - 1;
+    } else {
+        if (currentIndex > 0) currentIndex--;
+        else {
+            currentCategoryIndex = (currentCategoryIndex - 1 + categoryKeys.length) % categoryKeys.length;
             currentIndex = flashcardsCategories[categoryKeys[currentCategoryIndex]].length - 1;
         }
     }
     renderCard();
 }
 
-function flipCard() { 
-    // Gira la carta solo se non la stiamo trascinando
-    if (Math.abs(currentX) < 10) {
-        cardElement.classList.toggle('is-flipped'); 
-    }
-}
-
-// Funzioni per i bottoni fisici (se cliccati)
-function nextCard() { animateOut("-100%", () => navigate('next')); }
-function prevCard() { animateOut("100%", () => navigate('prev')); }
+// Bottoni legacy
+function nextCard() { animateOut("-100%"); }
+function prevCard() { animateOut("100%"); }
 
 window.onload = init;
