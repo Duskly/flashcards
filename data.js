@@ -146,6 +146,118 @@ const flashcardsCategories = {
 {
     q: "I diritti del dipendente pubblico",
     a: "Il dipendente pubblico ha diritto a un trattamento economico e normativo definito dai CCNL. I diritti si dividono in patrimoniali — come lo stipendio, le indennità e il TFR — e non patrimoniali — come le ferie, i permessi, i diritti sindacali e la tutela della dignità professionale. \n\nSul piano economico, la retribuzione si divide in una parte fissa (trattamento fondamentale), composta dallo stipendio tabellare, dall'indennità di comparto, dalla tredicesima e dal differenziale stipendiale; e una parte accessoria (variabile), legata alla performance e alle condizioni di lavoro, che comprende premi di produttività, indennità di posizione e risultato e lo straordinario. La parte accessoria è finanziata tramite il Fondo per la contrattazione integrativa, soggetto a limiti di legge rigidi che il Comune non può superare. \n\nSul piano delle assenze, il dipendente ha diritto a ferie (28-32 giorni annui), permessi retribuiti per motivi personali, lutto, Legge 104 e congedo matrimoniale. La malattia ha una disciplina particolare: nei primi 10 giorni di ogni evento viene applicata la cosiddetta trattenuta Brunetta (vengono tagliate le indennità accessorie), e il dipendente ha diritto alla conservazione del posto per un massimo di 18 mesi in un triennio (periodo di comporto), con retribuzione decrescente nel tempo. I congedi di maternità (5 mesi al 100%) e parentali (facoltativi, con retribuzione variabile) tutelano la genitorialità. Infine le aspettative sono assenze non retribuite, concesse per motivi personali o professionali, per un massimo di 12 mesi in un triennio. \n\nSul piano della flessibilità, la PA può ricorrere alla flessibilità temporale (orari flessibili, banca delle ore) e alla flessibilità spaziale, tra cui il lavoro agile (L. 81/2017), basato sul raggiungimento di obiettivi anziché sul controllo dell'orario. E’ inoltre possibile il lavoro da remoto, previa autorizzazione e comunicazione di una sede stabile. Richiede un accordo individuale, garantisce il diritto alla disconnessione e non può penalizzare la carriera o la retribuzione del dipendente. Oggi il lavoro agile deve essere programmato all'interno del PIAO."
+},
+{
+    q: "Codice di comportamento",
+    a: "Il Codice di comportamento dell’amministrazione è un insieme di regole etiche e di condotta che ogni dipendente pubblico deve rispettare. Serve a garantire integrità, trasparenza, imparzialità e buon andamento dell’azione amministrativa. \n\nÈ previsto dal D.Lgs. 165/2001 ed è integrato dai singoli codici adottati dalle amministrazioni. Sul piano dei contenuti, disciplina i rapporti con i cittadini — che devono essere improntati a cortesia, disponibilità e rispetto — l'uso corretto delle risorse pubbliche, il dovere di astensione in caso di conflitto di interessi e il divieto di utilizzare la propria posizione per ottenere vantaggi personali. \n\nIl dipendente non può accettare regali, compensi o altre utilità da soggetti che abbiano o possano avere rapporti con la PA, salvo quelli di modico valore, fissato convenzionalmente in non più di 150 euro. Anche in quel caso, se il regalo può anche solo apparire come una forma di influenza, il dipendente deve rifiutarlo. I regali ricevuti in violazione di questa regola devono essere restituiti o consegnati all'amministrazione. \n\nLa violazione del codice di comportamento costituisce illecito disciplinare e può portare a sanzioni fino al licenziamento nei casi più gravi."
 }
     ]
+,
+    "Sicurezza": [
+{
+    q: "Datore di lavoro",
+    a: "Nel contesto del D.Lgs. 81/2008 (Testo Unico sulla Sicurezza sul Lavoro), il datore di lavoro è il soggetto che ha la responsabilità principale in materia di salute e sicurezza. Nel caso di un ente pubblico come il Comune, il datore di lavoro ai fini della sicurezza coincide con il dirigente a cui sono attribuiti poteri di gestione e spesa, non necessariamente con il Sindaco. \n\nI suoi obblighi principali sono non delegabili: deve redigere il DVR (Documento di Valutazione dei Rischi) e nominare il RSPP (Responsabile del Servizio di Prevenzione e Protezione). Tutto il resto — formazione, sorveglianza sanitaria, fornitura dei DPI — può essere delegato ad altri soggetti, ma la responsabilità ultima rimane sempre in capo a lui."
+},
+{
+    q: "RSPP (Responsabile del Servizio Prevenzione e Protezione)",
+    a: "L’RSPP è una figura obbligatoria in ogni ente o azienda, prevista dal Testo Unico sulla sicurezza sul lavoro. Ha il compito di individuare i rischi presenti nei luoghi di lavoro e proporre misure per eliminarli o ridurli. Collabora con il datore di lavoro nella redazione del DVR, cioè il Documento di Valutazione dei Rischi. Non ha potere decisionale, ma un ruolo tecnico fondamentale per tutelare la salute e la sicurezza dei lavoratori. \n\nL'RLS (Rappresentante dei Lavoratori per la Sicurezza) è la figura che rappresenta i lavoratori in materia di salute e sicurezza. A differenza dell'RSPP, non viene nominato dal datore di lavoro ma eletto direttamente dai lavoratori. Ha il diritto di essere consultato sulla valutazione dei rischi, di accedere ai luoghi di lavoro e di ricevere informazioni e formazione specifica. È il punto di raccordo tra i lavoratori e il datore di lavoro su tutte le questioni legate alla sicurezza. \n\nIl medico competente è invece un professionista medico nominato dal datore di lavoro, obbligatorio quando la legge prevede la sorveglianza sanitaria — cioè quando i lavoratori sono esposti a rischi specifici come agenti chimici, rumore, videoterminali. Il suo compito principale è effettuare le visite mediche periodiche e rilasciare il giudizio di idoneità alla mansione: può dichiarare il lavoratore idoneo, idoneo con limitazioni o non idoneo."
+},
+{
+    q: "DVR",
+    a: "Il DVR (Documento di Valutazione dei Rischi) è il documento fondamentale del sistema di sicurezza aziendale, obbligatorio per tutti i datori di lavoro. È redatto dal datore di lavoro insieme all'RSPP e al medico competente, sentito l'RLS. Contiene l'analisi di tutti i rischi presenti nell'ambiente di lavoro, le misure preventive e protettive adottate per ridurli, i dispositivi di protezione individuale necessari e il programma delle misure da attuare nel tempo per migliorare la sicurezza. Non è un documento statico — deve essere aggiornato ogni volta che cambiano le condizioni di lavoro, l'organizzazione, i processi produttivi o in seguito a infortuni significativi."
+},
+{
+    q: "Informazione e formazione",
+    a: "Il D.Lgs. 81/2008 pone grande enfasi sulla formazione e informazione dei lavoratori, considerandole strumenti fondamentali di prevenzione. L'informazione consiste nel trasmettere al lavoratore le conoscenze sui rischi presenti nel suo ambiente di lavoro, sulle misure di prevenzione adottate e sui comportamenti da tenere in caso di emergenza. È un flusso essenzialmente unidirezionale: il datore informa il lavoratore. La formazione è invece un processo più strutturato e interattivo, che mira a sviluppare competenze concrete sulla sicurezza. Deve essere specifica per la mansione svolta, effettuata da soggetti qualificati e ripetuta periodicamente o ogni volta che cambiano le condizioni di lavoro. Entrambe devono avvenire durante l'orario di lavoro e a spese del datore di lavoro — non possono essere un onere per il lavoratore."
+},
+{
+    q: "Doveri dipendente e Preposto",
+    a: "La sicurezza sul lavoro non è una responsabilità esclusiva del datore di lavoro — anche il lavoratore ha obblighi precisi previsti dal D.Lgs. 81/2008. Deve prendersi cura della propria salute e di quella dei colleghi, utilizzare correttamente i DPI (Dispositivi di Protezione Individuale) forniti, seguire le istruzioni ricevute e segnalare immediatamente al datore o al preposto qualsiasi situazione di pericolo. Non può quindi considerarsi un soggetto passivo — è parte attiva del sistema di sicurezza. Il preposto è la figura intermedia tra il datore di lavoro e i lavoratori — tipicamente un capo squadra, un capo ufficio o un responsabile di reparto. Ha il compito di sovrintendere e vigilare sul corretto comportamento dei lavoratori durante l'attività lavorativa. Se rileva comportamenti non conformi alle norme di sicurezza deve intervenire immediatamente, e se necessario interrompere l'attività e informare il datore di lavoro."
+}
+    ],
+    "Appalti": [
+{
+    q: "I principi dell’evidenza pubblica",
+    a: "I principi dell’evidenza pubblica guidano l’attività della Pubblica Amministrazione nei contratti e negli appalti. L’obbiettivo è quello di garantire evidenza pubblica, ovvero assicurare che le procedure siano trasparenti, imparziali e aperte alla concorrenza. Sono codificati nei primi tre articoli del Codice dei contratti pubblici: principio del risultato, della fiducia, dell’accesso al mercato. L’obiettivo è selezionare il miglior offerente nel rispetto dell’interesse pubblico e della legalità."
+},
+{
+    q: "I requisiti di partecipazione",
+    a: "I requisiti di partecipazione sono le condizioni che le imprese devono possedere per poter partecipare a una gara pubblica. Si dividono in requisiti generali, come l'assenza di condanne penali o irregolarità fiscali; requisiti di idoneità professionale, come l'iscrizione alla Camera di Commercio; e requisiti economico-finanziari e tecnico-professionali, che garantiscono la capacità di eseguire il contratto. Tra i requisiti generali rientra anche il DURC (Documento Unico di Regolarità Contributiva), una certificazione che attesta che l'impresa è in regola con i pagamenti verso INPS, INAIL e casse edili — chi non è in regola viene escluso dalla gara. \n\nChi non possiede questi requisiti incorre nelle cause di esclusione, che possono essere obbligatorie — come una condanna penale definitiva per reati gravi — oppure facoltative, rimesse alla valutazione della stazione appaltante. Tuttavia non ogni irregolarità porta automaticamente all'esclusione. Il soccorso istruttorio è lo strumento che permette alla stazione appaltante di invitare il concorrente a regolarizzare o integrare la documentazione mancante o irregolare, entro un termine perentorio. Non può però essere usato per modificare l'offerta economica o tecnica — serve solo a sanare vizi formali, non sostanziali."
+},
+{
+    q: "I criteri di aggiudicazione",
+    a: "Nei contratti pubblici, i criteri di aggiudicazione servono a individuare l’offerta migliore. I due principali sono: il prezzo più basso, usato per forniture standard o ripetitive, e l’offerta economicamente più vantaggiosa, che valuta anche qualità, tempi e aspetti tecnici. Quest’ultima è molto usata quando conta non solo il costo, ma anche il valore complessivo della proposta. La scelta del criterio dipende dal tipo di appalto e dall’interesse pubblico da tutelare."
+},
+{
+    q: "I criteri di aggiudicazione",
+    a: "Nei contratti pubblici, i criteri di aggiudicazione servono a individuare l’offerta migliore. I due principali sono: il prezzo più basso, usato per forniture standard o ripetitive, e l’offerta economicamente più vantaggiosa, che valuta anche qualità, tempi e aspetti tecnici. Quest’ultima è molto usata quando conta non solo il costo, ma anche il valore complessivo della proposta. La scelta del criterio dipende dal tipo di appalto e dall’interesse pubblico da tutelare."
+},
+{
+    q: "L’affidamento diretto",
+    a: "L’affidamento diretto è una modalità semplificata di assegnazione degli appalti pubblici, che non richiede una vera e propria gara. La stazione appaltante può scegliere direttamente l’operatore economico, motivando la scelta e rispettando i limiti di importo stabiliti dal Codice dei contratti. Attualmente, è possibile ricorrere all’affidamento diretto per lavori fino a 150.000 euro e per servizi e forniture fino a 140.000 euro. Questa procedura è utilizzata soprattutto per lavori, servizi e forniture di modesta entità, poiché consente rapidità ed efficienza, sempre nel rispetto dei principi di trasparenza e buon andamento."
+},
+{
+    q: "Le procedure aperte e ristrette",
+    a: "Le procedure aperte e ristrette sono due forme di gara previste dal Codice dei contratti pubblici. Nella procedura aperta, chiunque può partecipare presentando direttamente un'offerta. È la più trasparente e utilizzata. Nella procedura ristretta, invece, solo gli operatori invitati dalla stazione appaltante, dopo una selezione preliminare, possono presentare offerta. Entrambe garantiscono concorrenza, ma la ristretta è utile quando serve una prima verifica dei requisiti. \n\nUna volta individuato il vincitore e comunicata l'aggiudicazione, non si passa immediatamente alla firma del contratto. La legge impone un periodo di sospensione obbligatoria chiamato stand still, della durata di 35 giorni dalla comunicazione dell'aggiudicazione. Questo periodo serve a tutelare i concorrenti non aggiudicatari, che possono utilizzare questo tempo per verificare la regolarità della procedura e presentare eventualmente ricorso al TAR. Solo dopo la scadenza dello stand still, e in assenza di ricorsi, il contratto può essere firmato."
+},
+{
+    q: "Il ruolo del RUP",
+    a: "Il RUP è la figura centrale in ogni procedura di appalto. È nominato dalla stazione appaltante e ha il compito di seguire tutte le fasi: dalla programmazione alla progettazione, fino all’esecuzione del contratto. Coordina i vari soggetti coinvolti, controlla tempi, costi e qualità e garantisce il rispetto delle norme. Il suo ruolo è previsto dal Codice dei contratti pubblici e assicura trasparenza, efficienza e regolarità nell’intero processo."
+},
+{
+    q: "L’esecuzione del contratto pubblico",
+    a: "L’esecuzione del contratto pubblico è la fase in cui l’appaltatore realizza concretamente quanto previsto dal contratto, che sia un lavoro, un servizio o una fornitura. In questa fase è fondamentale il controllo da parte della stazione appaltante, che verifica il rispetto di tempi, costi e qualità. Il RUP supervisiona l’esecuzione e può adottare misure in caso di ritardi o inadempienze. L’obiettivo è garantire il buon esito dell’appalto e tutelare l’interesse pubblico."
+}
+    ],
+    "Contabilità": [
+{
+    q: "Fonti di finanziamento e Entrate tributarie del comune",
+    a: "Il Comune finanzia la propria attività attraverso diverse fonti di entrata, che si dividono in tre grandi categorie. \n\nLe entrate tributarie, derivanti dalla potestà impositiva dell'ente: l'IMU (imposta sul patrimonio immobiliare), la TARI (tassa sui rifiuti, corrispettivo di un servizio specifico) e l'Addizionale Comunale IRPEF. Vale la pena ricordare la distinzione tra imposta — dovuta indipendentemente da un servizio — e tassa — legata a un servizio concreto reso dalla PA. \n\nLe entrate extratributarie, che comprendono i proventi dei servizi pubblici (es. tariffe per asili nido, parcheggi, mense scolastiche), i canoni per l'uso di beni comunali e le sanzioni amministrative. \n\nI trasferimenti, cioè le risorse che arrivano dall'esterno: dallo Stato (come il Fondo di Solidarietà Comunale), dalla Regione e dall'Unione Europea sotto forma di contributi e finanziamenti."
+},
+{
+    q: "IL DUP",
+    a: "Il DUP (Documento Unico di Programmazione) è il principale strumento di pianificazione del Comune. Serve a definire le linee strategiche e operative dell'ente e viene approvato dal Consiglio Comunale, rappresentando la base su cui costruire il bilancio di previsione. Si articola in due sezioni: la Sezione Strategica (SeS), con orizzonte di almeno 5 anni, che definisce le linee di mandato e gli obiettivi di lungo periodo; e la Sezione Operativa (SeO), con orizzonte triennale, che traduce quegli obiettivi in programmi concreti collegandoli alle risorse disponibili."
+},
+{
+    q: "Il Bilancio di Previsione",
+    a: "Il bilancio di previsione è il principale strumento di programmazione finanziaria del Comune. Viene approvato ogni anno dal Consiglio Comunale e indica, in modo preventivo, tutte le entrate e le spese dell'ente per il triennio successivo. È un documento tecnico ma anche politico, perché riflette le scelte strategiche dell'amministrazione. \n\nSi basa su alcuni principi fondamentali: annualità (viene approvato ogni anno), universalità (deve contenere tutte le entrate e le spese, senza eccezioni), integrità (le entrate e le spese devono essere iscritte al lordo, senza compensazioni), veridicità (le previsioni devono essere attendibili e fondate), pareggio (entrate e spese devono essere in equilibrio) e pubblicità (deve essere accessibile ai cittadini). \n\nSul piano della struttura, le entrate si classificano per titolo (tributarie, extratributarie, trasferimenti, entrate in conto capitale...) e le spese si dividono in spese correnti — per il funzionamento ordinario dell'ente come stipendi e utenze — e spese in conto capitale — per investimenti di lungo periodo come la costruzione di una scuola o l'acquisto di attrezzature. Queste ultime si collegano spesso al Fondo Pluriennale Vincolato, quando l'investimento si sviluppa su più anni. \n\nSul piano dell'iter, la Giunta predispone lo schema di bilancio e lo sottopone al Consiglio, che deve approvarlo entro il 31 dicembre dell'anno precedente. Se il bilancio non viene approvato nei termini si entra in esercizio provvisorio, che permette di spendere mensilmente non più di un dodicesimo delle spese previste, solo per le spese strettamente necessarie. Se invece manca anche solo lo schema predisposto dalla Giunta si parla di gestione provvisoria, situazione ancora più limitata. \n\nInfine il bilancio non è immutabile: può essere modificato nel corso dell'anno tramite variazioni di bilancio. Quelle ordinarie sono approvate dal Consiglio. In caso di urgenza, la Giunta può adottare variazioni in via d'urgenza, ma il Consiglio deve ratificarle entro 60 giorni, e comunque entro il 31 dicembre dell'anno in corso."
+},
+{
+    q: "Il pareggio di bilancio",
+    a: "Il pareggio di bilancio è il principio contabile fondamentale che impone all’ente pubblico di non prevedere spese superiori alle entrate, garantendo l’equilibrio economico-finanziario. Il rispetto del pareggio è essenziale per garantire la sostenibilità finanziaria dell’ente e il buon uso delle risorse pubbliche, evitando deficit e indebitamento eccessivo."
+},
+{
+    q: "I debiti fuori bilancio",
+    a: "I debiti fuori bilancio sono somme che il Comune deve pagare, ma che non erano previste nel bilancio. Nascono, ad esempio, da sentenze dei tribunali, accordi o situazioni impreviste. Per poterli riconoscere e pagare, serve una delibera del Consiglio comunale, che spiega chiaramente il motivo del debito. Questa procedura serve a garantire trasparenza e correttezza nei conti pubblici."
+},
+{
+    q: "PEG",
+    a: "Il PEG (Piano Esecutivo di Gestione) è lo strumento con cui la Giunta traduce gli obiettivi del bilancio e del DUP in attività concrete da realizzare. Assegna le risorse ai dirigenti e specifica cosa devono fare e con quali mezzi, collegando la programmazione politica alla gestione amministrativa. \n\nSul piano dei contenuti, il PEG definisce per ciascun dirigente: gli obiettivi da raggiungere, le risorse finanziarie assegnate (i capitoli di bilancio di cui può disporre), le risorse umane e strumentali a disposizione e gli indicatori di risultato con cui verrà valutata la performance. È quindi anche la base su cui si fonda la valutazione dei dirigenti e, di riflesso, la distribuzione del salario accessorio. \n\nSul piano dei tempi, viene approvato dalla Giunta dopo l'approvazione del bilancio di previsione, di norma entro 20 giorni. Ha durata annuale, coerente con il bilancio di riferimento."
+},
+{
+    q: "Le fasi dell’entrata",
+    a: "Le entrate degli enti locali si articolano in tre fasi fondamentali. La prima è l’accertamento, in cui l’ente verifica l’esistenza di un credito certo, liquido ed esigibile, determinando l’importo da incassare, il debitore e la scadenza. La seconda è la riscossione, che rappresenta il momento in cui il debitore effettua il pagamento, ad esempio tramite bonifico o altri mezzi previsti. Infine, c’è il versamento, ovvero il trasferimento effettivo delle somme incassate nelle casse dell’ente, completando così il processo di acquisizione dell’entrata."
+},
+{
+    q: "Le fasi dell’uscita",
+    a: "Le uscite del Comune seguono un processo ordinato diviso in quattro fasi. \n\nLa prima è l'impegno: la PA prenota una somma sul bilancio per far fronte a una spesa specifica, verificando che ci sia la copertura finanziaria. Prima che l'impegno sia formalizzato, il responsabile del servizio finanziario deve apporre il visto di regolarità contabile, che attesta l'esistenza della copertura finanziaria e la regolarità contabile dell'atto. Senza questo visto la spesa non può essere impegnata. \n\nLa seconda è la liquidazione: una volta che la prestazione è stata eseguita, il responsabile del servizio che ha dato esecuzione al provvedimento di spesa verifica che quanto ricevuto corrisponda a quanto pattuito — in termini di qualità, quantità e tempi — e determina l'esatto importo da pagare. È una competenza propria del dirigente, non delegabile al servizio finanziario. \n\nLa terza è l'ordinazione: il dirigente emette il mandato di pagamento, cioè l'atto formale con cui dispone al tesoriere di effettuare il pagamento. \n\nLa quarta è il pagamento vero e proprio, eseguito dal tesoriere — di norma una banca convenzionata con il Comune — che estingue l'obbligazione. \n\nOgni fase ha il suo responsabile e il suo controllo. Questo sistema a più livelli garantisce che i soldi pubblici vengano spesi in modo controllato, tracciabile e regolare. 👍"
+},
+{
+    q: "Residui attivi",
+    a: "I residui attivi sono entrate accertate dal Comune in un anno, ma non ancora incassate entro la fine dell’esercizio. In pratica, rappresentano crediti che l’ente deve ancora riscuotere. Possono riguardare tasse, trasferimenti o altri introiti. Vengono riportati nel bilancio dell’anno successivo e tenuti sotto controllo per garantire che non si accumulino troppi crediti non riscossi."
+},
+{
+    q: "Residui passivi",
+    a: "I residui passivi sono spese che il Comune ha impegnato, cioè autorizzato, in un anno, ma che non sono ancora state pagate entro la fine dell’esercizio. Sono quindi debiti che l’ente deve ancora saldare. Possono riguardare lavori, servizi o forniture già ricevuti. Vengono riportati nel bilancio dell’anno successivo per garantire che tutte le uscite siano correttamente gestite e monitorate."
+},
+{
+    q: "Il rendiconto di gestione",
+    a: "Il rendiconto di gestione è il documento con cui, alla fine dell’anno, il Comune dimostra come ha usato le risorse pubbliche. Serve a confrontare ciò che era stato previsto nel bilancio con quello che è stato effettivamente realizzato. È composto da tre parti: conto del bilancio, conto economico e conto del patrimonio. Viene approvato dal Consiglio e garantisce trasparenza e responsabilità nella gestione finanziaria."
+},
+{
+    q: "Fondo Pluriennale Vincolato (FPV)",
+    a: "È uno strumento contabile che aiuta a gestire i progetti che durano più anni. Permette di 'mettere da parte' quelle risorse, quei soldi che sono già destinati, o 'vincolati', per una spesa futura. Questo assicura che il bilancio sia sempre preciso, mostrando esattamente quali impegni reali l'ente ha preso, anche se la spesa avverrà più avanti. È fondamentale per la trasparenza e la corretta gestione dei fondi"
+}
+    ]
+
 };
