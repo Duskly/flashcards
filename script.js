@@ -3,7 +3,7 @@ let currentIndex = 0;
 let startX = 0;
 let currentX = 0;
 let isDragging = false;
-let startTime = 0;
+let isSwiping = false; // Nuova variabile di controllo
 
 const cardElement = document.getElementById('flashcard');
 const innerCard = cardElement.querySelector('.flashcard-inner');
@@ -33,19 +33,17 @@ function init() {
 
 function renderCard() {
     const currentCards = flashcardsCategories[categoryKeys[currentCategoryIndex]];
-    
-    // Reset totale della carta
     cardElement.classList.remove('is-flipped');
-    innerCard.style.transition = "none"; 
+    
+    // Reset immediato posizioni
+    innerCard.style.transition = "none";
     innerCard.style.transform = "translateX(0) rotateY(0)";
     innerCard.style.opacity = "1";
     
-    // Aggiorna testi
     questionText.innerText = currentCards[currentIndex].q;
     answerText.innerText = currentCards[currentIndex].a;
     cardNumber.innerText = currentIndex + 1;
 
-    // UI Tabs
     document.querySelectorAll('.category-tab').forEach((t, i) => {
         t.classList.toggle('active', i === currentCategoryIndex);
     });
@@ -54,64 +52,67 @@ function renderCard() {
     if (activeTab) activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center' });
 }
 
-// --- GESTIONE TOUCH OTTIMIZZATA ---
+// --- GESTIONE TOUCH ---
 
 cardElement.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
-    startTime = Date.now();
     isDragging = true;
-    currentX = 0;
-    innerCard.style.transition = "none"; // Rimuove transizioni durante il movimento del dito
+    isSwiping = false; // Reset ad ogni tocco
+    innerCard.style.transition = "none";
 }, {passive: true});
 
 cardElement.addEventListener('touchmove', e => {
     if (!isDragging) return;
     currentX = e.touches[0].clientX - startX;
     
-    // Se stiamo trascinando, non permettiamo la rotazione 3D per non incasinare il motore grafico
+    // Se il movimento supera i 10px, lo consideriamo uno swipe e non un click
+    if (Math.abs(currentX) > 10) {
+        isSwiping = true;
+    }
+
     if (!cardElement.classList.contains('is-flipped')) {
         const rotation = currentX / 15;
         innerCard.style.transform = `translateX(${currentX}px) rotate(${rotation}deg)`;
     }
 }, {passive: true});
 
-cardElement.addEventListener('touchend', e => {
+cardElement.addEventListener('touchend', () => {
     if (!isDragging) return;
     isDragging = false;
-    
-    const duration = Date.now() - startTime;
-    const absX = Math.abs(currentX);
 
-    // LOGICA CLICK: Se il movimento è minimo e il tocco è breve, gira la carta
-    if (absX < 10 && duration < 250) {
-        flipCard();
-        return;
-    }
-
-    // LOGICA SWIPE: Se superiamo la soglia, cambia card
     const threshold = 100;
     innerCard.style.transition = "transform 0.3s ease-out, opacity 0.3s";
 
-    if (currentX > threshold) {
+    if (isSwiping && currentX > threshold) {
         animateOut("100%");
-    } else if (currentX < -threshold) {
+    } else if (isSwiping && currentX < -threshold) {
         animateOut("-100%");
     } else {
-        // Torna al centro se lo swipe è incompleto
+        // Torna al centro se non è uno swipe valido
         innerCard.style.transform = cardElement.classList.contains('is-flipped') ? "rotateY(180deg)" : "translateX(0) rotate(0)";
     }
+    
+    // Importante: resettiamo currentX dopo un piccolo delay per non disturbare il click
+    setTimeout(() => { currentX = 0; }, 50);
 });
 
+// Funzione dedicata al click/tap
 function flipCard() {
-    cardElement.classList.toggle('is-flipped');
+    // Giriamo la carta SOLO se non stavamo swippando
+    if (!isSwiping) {
+        cardElement.classList.toggle('is-flipped');
+    }
 }
+
+// Colleghiamo esplicitamente l'onclick nel JS per sicurezza
+cardElement.onclick = flipCard;
 
 function animateOut(direction) {
     innerCard.style.transform = `translateX(${direction}) rotate(${direction === "100%" ? 20 : -20}deg)`;
     innerCard.style.opacity = "0";
     setTimeout(() => {
         navigate(direction === "100%" ? 'prev' : 'next');
-    }, 300);
+    }, 250);
 }
 
 function navigate(direction) {
@@ -131,9 +132,5 @@ function navigate(direction) {
     }
     renderCard();
 }
-
-// Bottoni legacy
-function nextCard() { animateOut("-100%"); }
-function prevCard() { animateOut("100%"); }
 
 window.onload = init;
