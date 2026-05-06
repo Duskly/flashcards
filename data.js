@@ -232,7 +232,7 @@ const flashcardsCategories = {
 },
 {
     q: "Le fasi dell’entrata",
-    a: "Le entrate degli enti locali si articolano in tre fasi fondamentali. La prima è l’accertamento, in cui l’ente verifica l’esistenza di un credito certo, liquido ed esigibile, determinando l’importo da incassare, il debitore e la scadenza. La seconda è la riscossione, che rappresenta il momento in cui il debitore effettua il pagamento, ad esempio tramite bonifico o altri mezzi previsti. Infine, c’è il versamento, ovvero il trasferimento effettivo delle somme incassate nelle casse dell’ente, completando così il processo di acquisizione dell’entrata."
+    a: "Le entrate degli enti locali si articolano in tre fasi fondamentali. La prima è l'accertamento, in cui l'ente verifica l'esistenza di un credito certo, liquido ed esigibile, determinando l'importo da incassare, il debitore e la scadenza. È in questa fase che l'entrata viene iscritta nel bilancio. La seconda è la riscossione, il momento in cui il debitore effettua il pagamento, gestita di norma dal tesoriere. Infine il versamento è il trasferimento effettivo delle somme nelle casse dell'ente, completando il processo."
 },
 {
     q: "Le fasi dell’uscita",
