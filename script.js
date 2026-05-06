@@ -11,7 +11,17 @@ const categoriesTabs = document.getElementById('categories-tabs');
 const categoryKeys = Object.keys(flashcardsCategories);
 
 function init() {
-    // 1. Popola le categorie in alto
+    // --- RECUPERO MEMORIA ---
+    // Leggiamo se ci sono dati salvati precedentemente
+    const savedCategory = localStorage.getItem('lastCategory');
+    const savedIndex = localStorage.getItem('lastIndex');
+    
+    if (savedCategory !== null && savedIndex !== null) {
+        currentCategoryIndex = parseInt(savedCategory);
+        currentIndex = parseInt(savedIndex);
+    }
+    // ------------------------
+
     categoriesTabs.innerHTML = "";
     categoryKeys.forEach((name, i) => {
         const btn = document.createElement('div');
@@ -27,17 +37,13 @@ function init() {
         categoriesTabs.appendChild(btn);
     });
 
-    // 2. Gestione CLICK sulla carta per girarla
     cardElement.addEventListener('click', function(e) {
-        // Se stiamo cliccando dentro il retro e la carta è già girata, 
-        // permettiamo l'interazione col testo (scroll) senza rigirare subito.
         if (cardElement.classList.contains('is-flipped') && e.target.closest('.back')) {
             return; 
         }
         cardElement.classList.toggle('is-flipped');
     });
 
-    // 3. Gestione SWIPE
     cardElement.addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX;
     }, {passive: true});
@@ -56,13 +62,11 @@ function handleGesture() {
     if (touchendX > touchstartX + swipeThreshold) prevCard();
 }
 
-// Funzioni per i bottoni e lo swipe
 function nextCard() {
     const currentCards = flashcardsCategories[categoryKeys[currentCategoryIndex]];
     if (currentIndex < currentCards.length - 1) {
         currentIndex++;
     } else {
-        // Loop alla categoria successiva o alla prima
         currentCategoryIndex = (currentCategoryIndex + 1) % categoryKeys.length;
         currentIndex = 0;
     }
@@ -73,7 +77,6 @@ function prevCard() {
     if (currentIndex > 0) {
         currentIndex--;
     } else {
-        // Loop alla categoria precedente o all'ultima
         currentCategoryIndex = (currentCategoryIndex - 1 + categoryKeys.length) % categoryKeys.length;
         currentIndex = flashcardsCategories[categoryKeys[currentCategoryIndex]].length - 1;
     }
@@ -84,25 +87,26 @@ function renderCard() {
     const categoryName = categoryKeys[currentCategoryIndex];
     const cardData = flashcardsCategories[categoryName][currentIndex];
     
-    // Reset classe flip
+    // --- SALVATAGGIO POSIZIONE ---
+    // Ogni volta che mostriamo una carta, salviamo dove siamo
+    localStorage.setItem('lastCategory', currentCategoryIndex);
+    localStorage.setItem('lastIndex', currentIndex);
+    // -----------------------------
+
     cardElement.classList.remove('is-flipped');
     
-    // Aggiorna contenuti
     setTimeout(() => {
         questionText.innerText = cardData.q;
         answerText.innerText = cardData.a;
         cardNumber.innerText = currentIndex + 1;
         
-        // Reset scroll del retro
         const backSide = document.querySelector('.back');
         if (backSide) backSide.scrollTop = 0;
 
-        // Aggiorna stile tab attivi
         document.querySelectorAll('.category-tab').forEach((t, i) => {
             t.classList.toggle('active', i === currentCategoryIndex);
         });
 
-        // Centra il tab attivo se esce dallo schermo
         const activeTab = document.getElementById(`tab-${currentCategoryIndex}`);
         if (activeTab) {
             activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
@@ -110,5 +114,4 @@ function renderCard() {
     }, 150);
 }
 
-// Avvio
 window.onload = init;
