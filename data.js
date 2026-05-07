@@ -82,6 +82,10 @@ const flashcardsCategories = {
 {
     q: "SCIA",
     a: "È uno strumento di semplificazione amministrativa. In pratica, se un cittadino o un impresa vuole avviare un'attività, ad esempio nel commercio o nell'edilizia, non deve più aspettare un permesso preventivo. È sufficiente avvisare semplicemente la Pubblica Amministrazione presentando una 'segnalazione' con tutti i documenti richiesti, e si può avviare subito l’attività senza attendere risposta. La PA, poi, ha 60 giorni per fare i suoi controlli e verificare che sia tutto in regola."
+},
+{
+    q: "Testo Unico documentazione",
+    a: "Il Testo Unico in materia di documentazione amministrativa è il DPR 28 dicembre 2000, n. 445, che ha riordinato e coordinato le disposizioni in materia di documentazione amministrativa. Disciplina: le dichiarazioni sostitutive di certificazione e di atto di notorietà (autocertificazioni); l'accesso ai documenti amministrativi; i documenti informatici e la firma digitale; i documenti di identità e riconoscimento; la gestione dei documenti e il protocollo informatico; la semplificazione dei procedimenti amministrativi attraverso l'abolizione dell'obbligo di produrre certificati nei rapporti con la pubblica amministrazione. Il principio cardine è la decertificazione: le amministrazioni non possono richiedere certificati o atti di notorietà che possono essere sostituiti da dichiarazioni dell'interessato, e devono acquisire d'ufficio dati e documenti in possesso delle pubbliche amministrazioni. L'obiettivo è ridurre gli oneri burocratici per i cittadini e accelerare i procedimenti amministrativi."
 }
     ],
     "Digitale e GDPR": [
