@@ -86,6 +86,18 @@ const flashcardsCategories = {
 {
     q: "Testo Unico documentazione",
     a: "Il Testo Unico in materia di documentazione amministrativa è il DPR 28 dicembre 2000, n. 445, che ha riordinato e coordinato le disposizioni in materia di documentazione amministrativa. Disciplina: le dichiarazioni sostitutive di certificazione e di atto di notorietà (autocertificazioni); l'accesso ai documenti amministrativi; i documenti informatici e la firma digitale; i documenti di identità e riconoscimento; la gestione dei documenti e il protocollo informatico; la semplificazione dei procedimenti amministrativi attraverso l'abolizione dell'obbligo di produrre certificati nei rapporti con la pubblica amministrazione. Il principio cardine è la decertificazione: le amministrazioni non possono richiedere certificati o atti di notorietà che possono essere sostituiti da dichiarazioni dell'interessato, e devono acquisire d'ufficio dati e documenti in possesso delle pubbliche amministrazioni. L'obiettivo è ridurre gli oneri burocratici per i cittadini e accelerare i procedimenti amministrativi."
+},
+{
+    q: "Le dichiarazioni sostitutive",
+    a: "Le dichiarazioni sostitutive sono strumenti previsti dal D.P.R. 445/2000 per semplificare i rapporti con la Pubblica Amministrazione. Possono essere di due tipi: l’autocertificazione, che sostituisce certificati su fatti personali, e la dichiarazione sostitutiva di atto di notorietà, usata per attestare stati, fatti o qualità non certificabili (es dichiarazione di erede). Hanno lo stesso valore dei documenti ufficiali e chi le rilascia è responsabile penalmente in caso di dichiarazioni false."
+},
+{
+    q: "L’autocertificazione",
+    a: "L’autocertificazione è una dichiarazione che il cittadino può presentare alla Pubblica Amministrazione al posto di certificati, per semplificare i rapporti con gli uffici. È prevista dal D.P.R. 445 del 2000 e vale, ad esempio, per dati anagrafici, titoli di studio, situazione familiare. Ha lo stesso valore dei certificati ufficiali, ma chi dichiara il falso rischia sanzioni penali. Le amministrazioni devono accettarla e poi verificare i dati, se necessario."
+},
+{
+    q: "I controlli sulle dichiarazioni",
+    a: "Le dichiarazioni sostitutive, come l’autocertificazione, devono essere oggetto di controlli da parte della Pubblica Amministrazione. I controlli possono essere a campione, sistematici o mirati in caso di dubbi. Se emergono falsità, scatta la decadenza dai benefici ottenuti e possono esserci sanzioni penali. Questi controlli servono a garantire correttezza, trasparenza e rispetto delle regole nei rapporti tra cittadini e amministrazioni."
 }
     ],
     "Digitale e GDPR": [
