@@ -264,7 +264,12 @@ const flashcardsCategories = {
 },
 {
     q: "Il rendiconto di gestione",
-    a: "Il rendiconto di gestione è il documento con cui, alla fine dell’anno, il Comune dimostra come ha usato le risorse pubbliche. Serve a confrontare ciò che era stato previsto nel bilancio con quello che è stato effettivamente realizzato. È composto da tre parti: conto del bilancio, conto economico e conto del patrimonio. Viene approvato dal Consiglio e garantisce trasparenza e responsabilità nella gestione finanziaria."
+    a: "Il rendiconto di gestione è il documento con cui, alla fine dell’anno, il Comune dimostra come ha usato le risorse pubbliche. Serve a confrontare ciò che era stato previsto nel bilancio con quello che è stato effettivamente realizzato. È composto da tre parti: conto del bilancio, conto economico e conto del patrimonio. Viene approvato dal Consiglio e garantisce trasparenza e responsabilità nella gestione finanziaria. \n\nConto del bilancio - È la parte finanziaria: Guarda entrate e spese secondo il criterio della competenza finanziaria potenziata. Risponde a: “Quante entrate ho accertato? Quante spese ho impegnato?”
+È qui che trovi: accertamenti, impegni, residui attivi e passivi, avanzi e disavanzi\n
+Conto economico - guarda costi e ricavi, come in un’azienda. Risponde a “quant mi è costato davvero gestire l’ente?” Costo del personale, ricavi da servizi..\n
+Conto del patrimonio - è la fotografia del patrimonio dell’ente, mostra ciò che possiedi e e ciò che devi. Trovi patrimonio netto, fondi, immobili..
+
+"
 },
 {
     q: "Fondo Pluriennale Vincolato (FPV)",
