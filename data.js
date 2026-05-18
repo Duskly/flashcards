@@ -271,15 +271,61 @@ const flashcardsCategories = {
     a: "È uno strumento contabile che aiuta a gestire i progetti che durano più anni. Permette di 'mettere da parte' quelle risorse, quei soldi che sono già destinati, o 'vincolati', per una spesa futura. Questo assicura che il bilancio sia sempre preciso, mostrando esattamente quali impegni reali l'ente ha preso, anche se la spesa avverrà più avanti. È fondamentale per la trasparenza e la corretta gestione dei fondi"
 }
     ],
-    "Controlli": [
+
+    "Bonus": [
 {
-    q: "Controlli interni",
-    a: "I controlli interni sono gli strumenti con cui il Comune verifica che la propria attività rispetti i principi di legalità, efficienza e buon andamento. Sono svolti da organi interni all'ente e si distinguono in tre tipi, ciascuno con un livello di analisi diverso. \n\nIl controllo di regolarità amministrativa e contabile verifica che gli atti siano conformi alle norme — è il controllo più \"formale\", quello che risponde alla domanda \"abbiamo fatto le cose per bene?” \n\nIl controllo strategico monitora l'attuazione delle politiche e dei programmi dell'ente nel lungo periodo — risponde alla domanda \"stiamo andando nella direzione giusta?\" \n\nIl controllo di gestione valuta se gli obiettivi sono stati raggiunti e se le risorse sono state usate in modo efficiente — risponde alla domanda \"abbiamo ottenuto i risultati previsti?\""
+    q: "RPCT",
+    a: "Il responsabile della prevenzione della corruzione e della trasparenza è una figura centrale nel sistema anticorruzione e obbligatoria per tutte le PA. È un dirigente nominato dall'organo politico e ha il compito di: redigere il piano triennale PTPCT (poi adottato dalla giunta), monitorare il rispetto delle misure previste, analizzare i processi e le aree a rischio, gestire le segnalazioni (whistleblowing).Nei comuni spesso questa figura coincide con il Segretario. \n\nSe un ufficio o un dirigente non rispetta le misure del piano, il responsabile deve segnalare ai vertici amministrativi, attivare la responsabilità dirigenziale (procedimenti disciplinari), informare l'OIV per l'impatto sulle performance e la Corte dei conti s ci sono danni erariali, proporre misure correttive e documentare tutto nella relazione annuale entro il 31 gennaio. Se non lo fa, ne risponde lui."
 },
 {
-    q: "Controlli esterni",
-    a: "I controlli esterni sono svolti da organi indipendenti rispetto all'ente controllato e servono a garantire legalità, trasparenza e correttezza finanziaria. \n\nIl principale è la Corte dei Conti, organo indipendente previsto dalla Costituzione, che esercita tre tipi di controllo. Verifica la regolarità contabile e finanziaria — controlla bilanci, spese e rispetto del pareggio di bilancio, assicurandosi che l'ente non spenda più di quanto può. Verifica la legittimità degli atti più importanti, accertando la loro conformità alla legge. Controlla infine la sana gestione finanziaria, valutando che le risorse siano usate in modo efficiente ed economico. \n\nOltre al controllo, la Corte dei Conti ha anche una funzione giurisdizionale: giudica i dipendenti pubblici che causano un danno economico all'ente, la cosiddetta responsabilità amministrativo-contabile o danno erariale. Un esempio pratico: un dirigente che firma un contratto illegittimo causando perdite all'ente può essere condannato dalla Corte dei Conti a risarcire il danno."
+    q: "Motivazione",
+    a: "La motivazione del provvedimento amministrativo è la parte del provvedimento, previsto dal 241/1990, in cui la Pubblica Amministrazione esplicita il percorso che ha portato alla decisione presa. Deve contenere i Presupposti di fatto — cioè gli elementi emersi dall'istruttoria (documenti, verifiche, dati), le Ragioni giuridiche (le norme applicate e il ragionamento giuridico seguito) e altre eventuali informazioni. L'obbiettivo è quello di garantire trasparenza democratica e mettere i cittadini nella condizione di far valere i propri diritti. E' obbligatoria, salvo per gli atti normativi (regolamenti) e atti a contenuto generale (piani). La mancanza nei casi previsti, comporta l'annullabilita dell'atto"
+},
+{
+    q: "Competenza",
+    a: "È l'insieme dei poteri attribuiti per legge a un organo amministrativo. Si articola in competenza per materia (che tipo di affari può trattare un organo es: urbanistica, personale), per territorio (dove l'organo può esercitare i suoi poteri) e per grado (ovvero il livello gerarchico). Se vogliamo parlare di competenza per quanto riguarda i provvedimenti: chi può adottarlo e l'ufficio previsto."
+},
+{
+    q: "Differenza appalto e concessione",
+    a: "sta nel rischio operativo: nell'appalto resta in capo alla PA, nella concessione è dell'operatore economico. Infatti l'appalto è un lavoro, un servizio o una fornitura affidato e pagato dalla PA. La Concessione (es: parcheggio)è un contratto in cui l'operatore economico gestisce un servizio o un'opera, finanziandosi con i ricavi da essi derivati assumendosi il rischio imprenditoriale relativi a domanda e offerta."
+},
+{
+    q: "Regolamento del consiglio comunale",
+    a: "È un atto normativo interno, previsto dal TUEL, adattato dal Consiglio per disciplinare il funzionamento del Consiglio, l'organizzazione dei diritti e delle responsabilità dei consiglieri, le modalità di convocazione, discussione e votazione e la formazione delle deliberazioni. E approvato dal consiglio con maggioranza assoluta"
+},
+{
+    q: "Bilanciamento privacy/trasparenza",
+    a: "Il bilanciamento privacy/trasparenza si fonda sui principi di necessità, proporzionalità e minimizzazione: la PA pubblica solo ciò che è indispensabile per la trasparenza, tutelando i dati personali secondo GDPR e il decreto Trasparenza del 2013. Un esempio è la graduatoria dei concorsi pubblici. Vengono indicati tutti i voti, ma non i dati personali dei partecipanti"
+},
+{
+    q: "Ciclo della performance",
+    a: "È il processo con cui ogni amministrazione programma, misura, valuta e rendiconto i risultati ottenuti. Comprende la programmazione, il collegamento tra obbiettivi e risorse, il monitoraggio, gli interventi correttivi, la valutazione tramite il Sistema di Misurazione e Valutazione della Performance, i premi."
+},
+{
+    q: "Regolarità amministrativa e contabile / Pareri dirigenziali",
+    a: "La regolarità amministrativa si riferisce alla legittimità e correttezza di un procedimento, verificata con un parere del dirigente tecnico: l'atto è conforme alla legge? Coerente con regolamenti e statuto? Adottato dall'organo competente? La regolarità contabile si riferisce alla sostenibilità finanziaria dell'atto, verificata con un parere del responsabile finanziari: c'è copertura finanziaria? È coerente con bilancio e PEG? Rispetta i principi contabili? Entrambi sono obbligatori per gli atti che comportano delle spese, ma non vincolanti. \n\nIl visto è diverso dal parere: si appone sulle determinazioni dirigenziali che comportano spesa. È rilasciato dal responsabile finanziario e attesta che c'è copertura finanziaria"
+},
+{
+    q: "Caratteristiche fondamentali dell'ente locale",
+    a: "L'ente locale è un ente territoriale, autonomo, rappresentante della comunità, dotato di autarchia, poteri regolamentari e funzioni proprie, riconosciuto dalla Costituzione come componente della Repubblica. Ha funzioni essenziali come curare l'interesse pubblico, erogare servizi locali, pianificare lo sviluppo del territorio."
+},
+{
+    q: "In caso di diniego",
+    a: "Prima di tutto, facciamo un passo indietro. Quando il Responsabile del procedimento ritiene di dover rigettare in istanza, non può semplicemente rifiutare la richiesta. Deve seguire una procedura: invia un preavviso di rigetto, indicando i motivi che la ostacolano. Da questo momento i Termini si interrompono e il cittadino ha 10 giorni per presentare osservazioni. Se ritenute valide, il percorso riprende, altrimenti il responsabile emette il provvedimento di diniego con motivazione rafforzata. Ha comunque sempre a disposizione l'accesso agli atti, così vede il fascicolo e i documenti che hanno portato al rifiuto. Dopo aver capito le ragioni, ha due strade: la tutela amministrativa o quella giurisdizionale. Nella tutela amministrativa può presentare un ricorso gerarchico entro 30 giorni (hanno 90g per risp) oppure – se previsto – un ricorso in opposizione. In alternativa può fare un ricorso straordinario al Presidente della Repubblica, entro 120 giorni. Se invece vuole rivolgersi al giudice, può fare ricorso al TAR entro 60 giorni, contestando errori di legge, motivazione o istruttoria. Infine, la Pubblica Amministrazione può anche correggere da sola il proprio errore tramite autotutela, ma non è un diritto del cittadino: è una scelta dell'ente."
+},
+{
+    q: "Potere sostitutivo",
+    a: "il potere sostitutivo è il potere di un'autorità di sostituirsi a un ufficio o un ente in caso di inerzia. Serve a evitare blocchi dell'amministrazione e garantire il rispetto della legge. Nel caso dei procedimenti, il responsabile del potere sostitutivo interviene se il procedimento non si conclude nei termini e può adottare l'atto finale. Nel caso della trasparenza, il RPCT attiva controlli e interventi sostitutivi in caso di mancata pubblicazione."
+},
+{
+    q: "Organo dirigenziale, competenze e responsabilità",
+    a: "l'Organo dirigenziale è una figura cardine nella gestione delle PA, distinta dall'indirizzo politico: gestisce l'attività amministrativa, adotta gli atti e i provvedimenti, organizza uffici e risorse risponde dei risultati dei propri uffici. Ha autonomia gestionale, tecnica e contabile. Dirige, coordina e controlla il personale e i responsabili del procedimento. Ha responsabilità dirigenziale, legata alla performance (può comportare revoca, penalizzazioni), responsabilità disciplinare (per violazioni di doveri d'ufficio e omessa vigilanza), responsabilità amministrativo-contabile (per danno erariale da dolo o colpa grave), responsabilità civile e penale."
+},
+{
+    q: "Tipi di autonomia negli enti locali",
+    a: "Hanno autonomia statuaria: adottano il proprio statuto per definire funzionamento degli organi, organizzazione interna, forme di partecipazione. Hanno autonomia regolamentare: possono emanare regolamenti su organizzazione degli uffici, tributi locali, servizi pubblici, edilizia con potere normativo. Hanno autonomia amministrativa (sussidiarietà). Hanno autonomia finanziaria: gestire entrate, spese, bilanci, investimenti. Autonomia impositiva e tributaria: possono istituire tributi locali, addizionali, tariffe"
 }
     ]
+
 
 };
