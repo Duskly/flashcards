@@ -325,6 +325,16 @@ const flashcardsCategories = {
     q: "Tipi di autonomia negli enti locali",
     a: "Hanno autonomia statuaria: adottano il proprio statuto per definire funzionamento degli organi, organizzazione interna, forme di partecipazione. Hanno autonomia regolamentare: possono emanare regolamenti su organizzazione degli uffici, tributi locali, servizi pubblici, edilizia con potere normativo. Hanno autonomia amministrativa (sussidiarietà). Hanno autonomia finanziaria: gestire entrate, spese, bilanci, investimenti. Autonomia impositiva e tributaria: possono istituire tributi locali, addizionali, tariffe"
 }
+    ],
+    "Controlli": [
+{
+    q: "Controlli interni",
+    a: "I controlli interni sono gli strumenti con cui il Comune verifica che la propria attività rispetti i principi di legalità, efficienza e buon andamento. Sono svolti da organi interni all'ente e si distinguono in tre tipi, ciascuno con un livello di analisi diverso. \n\nIl controllo di regolarità amministrativa e contabile verifica che gli atti siano conformi alle norme — è il controllo più \"formale\", quello che risponde alla domanda \"abbiamo fatto le cose per bene?” \n\nIl controllo strategico monitora l'attuazione delle politiche e dei programmi dell'ente nel lungo periodo — risponde alla domanda \"stiamo andando nella direzione giusta?\" \n\nIl controllo di gestione valuta se gli obiettivi sono stati raggiunti e se le risorse sono state usate in modo efficiente — risponde alla domanda \"abbiamo ottenuto i risultati previsti?\""
+},
+{
+    q: "Controlli esterni",
+    a: "I controlli esterni sono svolti da organi indipendenti rispetto all'ente controllato e servono a garantire legalità, trasparenza e correttezza finanziaria. \n\nIl principale è la Corte dei Conti, organo indipendente previsto dalla Costituzione, che esercita tre tipi di controllo. Verifica la regolarità contabile e finanziaria — controlla bilanci, spese e rispetto del pareggio di bilancio, assicurandosi che l'ente non spenda più di quanto può. Verifica la legittimità degli atti più importanti, accertando la loro conformità alla legge. Controlla infine la sana gestione finanziaria, valutando che le risorse siano usate in modo efficiente ed economico. \n\nOltre al controllo, la Corte dei Conti ha anche una funzione giurisdizionale: giudica i dipendenti pubblici che causano un danno economico all'ente, la cosiddetta responsabilità amministrativo-contabile o danno erariale. Un esempio pratico: un dirigente che firma un contratto illegittimo causando perdite all'ente può essere condannato dalla Corte dei Conti a risarcire il danno."
+}
     ]
 
 
